@@ -15,3 +15,9 @@ def test_it_exists_with_attributes():
     }
 
     user_instance = User(**user_data)
+
+    assert user_instance.email == user_data.email
+    assert user_instance.password != user_data.password
+    assert user_instance.phone_number == user_data.phone_number
+    assert user_instance.first_name == user_data.first_name
+    assert user_instance.last_name == user_data.last_name
