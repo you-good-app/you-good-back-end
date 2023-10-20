@@ -31,7 +31,7 @@ def register_user():
     hashed_password = sha256_crypt.encrypt(password)
 
     new_user = User(
-        username=username,
+        email=email,
         hashed_password=hashed_password, 
         phone_number=phone_number,
         first_name=first_name,
