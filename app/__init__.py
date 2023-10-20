@@ -30,7 +30,7 @@ def create_app():
 
     # Register Blueprints here
     # from .routes import example_bp
-    from .routes import user_routes
+    from app.routes.user_routes import user_bp
 
     # app.register_blueprint(example_bp)
     app.register_blueprint(user_bp)

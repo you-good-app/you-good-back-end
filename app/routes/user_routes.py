@@ -11,10 +11,10 @@ def register_user():
     email = data.get("email").lower()
     password = data.get("password")
     phone_number = data.get("phone_number")
-    first_name = data.get("firstName")
-    last_name = data.get("lastName")
+    first_name = data.get("first_name")
+    last_name = data.get("last_name")
 
-    missing_any_user_data = not email or not password or not number or not first_name or not last_name
+    missing_any_user_data = not email or not password or not phone_number or not first_name or not last_name
 
     if missing_any_user_data:
         return make_response(jsonify({"message": "Email, password, phone number, first name, and last name are required."}), 400)
