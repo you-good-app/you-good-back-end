@@ -9,7 +9,6 @@ db = SQLAlchemy()
 migrate = Migrate()
 load_dotenv()
 
-
 def create_app():
     app = Flask(__name__)
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -24,13 +23,16 @@ def create_app():
 
     # Import models here for Alembic setup
     # from app.models.ExampleModel import ExampleModel
+    from app.models.user import User
 
     db.init_app(app)
     migrate.init_app(app, db)
 
     # Register Blueprints here
     # from .routes import example_bp
+    from app.routes.user_routes import user_bp
 
     # app.register_blueprint(example_bp)
-    
+    app.register_blueprint(user_bp)
+
     return app
